@@ -194,6 +194,7 @@
             color: #fff;
         }
 
+        /* Form Inputs and selects */
         input, select {
             width: 100%;
             padding: 1.1rem 1.5rem;
@@ -395,6 +396,7 @@
             background: rgba(255, 255, 255, 0.02);
         }
 
+        /* Responsive Breakpoints */
         @media (max-width: 768px) {
             h1 { font-size: 2.3rem; }
             .page { padding: 1.5rem 1rem; }
@@ -406,18 +408,24 @@
 </head>
 <body>
 
+    <!-- Background Particles -->
     <canvas id="particles-canvas"></canvas>
 
+    <!-- Floating Secure Access Key Badge -->
     <div class="admin-badge" id="open-admin-btn">
         🔐 Analytics Logs
     </div>
 
+    <!-- =========================================================
+         HTML: HOME PAGE
+         ========================================================= -->
     <div id="home-page" class="page active">
         <h1 class="gradient-text">WELCOME TO</h1>
         <h1>RAJATH'S AI PROJECT</h1>
         <p class="subtitle">This is a test website created by Rajath's AI Project.<br>Choose any option below to begin.</p>
 
         <div class="cards-grid">
+            <!-- Flames Card -->
             <div class="glass-panel nav-card flames-hover" id="nav-flames">
                 <div class="card-icon">❤️</div>
                 <h2 style="color: #ef4444;">FLAMES Calculator</h2>
@@ -425,6 +433,7 @@
                 <button class="btn btn-flames">Open</button>
             </div>
 
+            <!-- Duck Card -->
             <div class="glass-panel nav-card duck-hover" id="nav-duck">
                 <div class="card-icon">🦆</div>
                 <h2 style="color: #eab308;">No Touch Duck</h2>
@@ -432,6 +441,7 @@
                 <button class="btn btn-duck">Play</button>
             </div>
 
+            <!-- Animal Card -->
             <div class="glass-panel nav-card animal-hover" id="nav-animal">
                 <div class="card-icon">🐼</div>
                 <h2 style="color: #a855f7;">Animal Personality</h2>
@@ -441,21 +451,29 @@
         </div>
     </div>
 
+    <!-- =========================================================
+         HTML: FLAMES PAGE
+         ========================================================= -->
     <div id="flames-page" class="page">
         <button class="btn btn-back" id="back-flames">← Back to Home</button>
+        
         <div class="glass-panel flames-form-container" id="flames-input-section">
             <h1 style="color: #ef4444; font-size: 2.6rem;">🔥 FLAMES 🔥</h1>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Discover your compatibility status with precision.</p>
+            
             <form id="flames-form">
                 <input type="text" id="flames-name1" placeholder="Your Name" required autocomplete="off">
                 <input type="text" id="flames-name2" placeholder="Partner/Friend Name" required autocomplete="off">
                 <button type="submit" class="btn btn-flames" style="width: 100%;">Calculate Compatibility</button>
             </form>
         </div>
+
         <div class="glass-panel" id="flames-result">
             <div id="flames-result-icon" class="card-icon" style="font-size: 5rem;">❤️</div>
             <div class="result-title" id="flames-result-title">LOVE</div>
             <div class="result-score" id="flames-result-score">Compatibility: 96%</div>
             <div class="result-desc" id="flames-result-desc">You two are made for each other.</div>
+            
             <div style="max-width: 500px; margin: 0 auto; text-align: left;">
                 <div class="stat-row"><div class="stat-label"><span>Love</span><span id="flames-p1-val">0%</span></div><div class="progress-bg"><div class="progress-fill" id="flames-p1" style="background: linear-gradient(90deg, #f43f5e, #e11d48);"></div></div></div>
                 <div class="stat-row"><div class="stat-label"><span>Trust</span><span id="flames-p2-val">0%</span></div><div class="progress-bg"><div class="progress-fill" id="flames-p2" style="background: linear-gradient(90deg, #60a5fa, #2563eb);"></div></div></div>
@@ -463,16 +481,23 @@
                 <div class="stat-row"><div class="stat-label"><span>Fun</span><span id="flames-p4-val">0%</span></div><div class="progress-bg"><div class="progress-fill" id="flames-p4" style="background: linear-gradient(90deg, #fbbf24, #d97706);"></div></div></div>
                 <div class="stat-row"><div class="stat-label"><span>Chemistry</span><span id="flames-p5-val">0%</span></div><div class="progress-bg"><div class="progress-fill" id="flames-p5" style="background: linear-gradient(90deg, #c084fc, #9333ea);"></div></div></div>
             </div>
+            
             <button class="btn btn-back" style="margin-top: 2rem;" id="flames-try-again">Try Another Combination</button>
         </div>
     </div>
 
+    <!-- =========================================================
+         HTML: NO TOUCH DUCK PAGE
+         ========================================================= -->
     <div id="duck-page" class="page">
         <button class="btn btn-back" id="back-duck">← Back to Home</button>
         <h1 style="color: #eab308; font-size: 2.6rem; text-align: center; margin-bottom: 0.5rem;">NO TOUCH DUCK</h1>
+        <p style="text-align: center; color: var(--text-muted); margin-bottom: 2.5rem;">WARNING: Highly sensitive waterfowl inside. Do not tap.</p>
+
         <div id="duck-arena">
             <div id="the-duck">
                 <div class="speech-bubble" id="duck-speech">Please don't touch me!</div>
+                <!-- Inline Interactive SVG Duck -->
                 <svg viewBox="0 0 100 100" class="duck-svg" id="duck-svg-elem">
                     <path d="M 20 60 Q 50 95 80 60 Q 95 40 70 25 Q 50 15 30 25 Q 5 40 20 60" fill="#facc15" id="duck-body"/>
                     <path d="M 25 55 Q 45 80 60 55 Z" fill="#eab308" />
@@ -494,10 +519,16 @@
         </div>
     </div>
 
+    <!-- =========================================================
+         HTML: ANIMAL PERSONALITY PAGE
+         ========================================================= -->
     <div id="animal-page" class="page">
         <button class="btn btn-back" id="back-animal">← Back to Home</button>
+        
         <div class="glass-panel" id="animal-input-section">
             <h1 style="color: #a855f7; font-size: 2.6rem; text-align: center;">🐼 SPIRIT ANIMAL 🐼</h1>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 2.5rem;">Answer with instinct to map your digital spirit animal.</p>
+            
             <form id="animal-form">
                 <div class="animal-form-grid">
                     <input type="text" id="a-name" placeholder="Your Name" required>
@@ -507,47 +538,65 @@
                         <option value="female">Female</option>
                         <option value="other">Other</option>
                     </select>
-                    <input type="date" id="a-dob" required>
+                    <input type="date" id="a-dob" required title="Date of Birth">
                     <input type="text" id="a-food" placeholder="Favorite Food" required>
                     <select id="a-color" required>
                         <option value="" disabled selected>Favorite Color</option>
-                        <option value="red">Red</option><option value="blue">Blue</option><option value="green">Green</option>
-                        <option value="yellow">Yellow</option><option value="purple">Purple</option><option value="black">Black/Dark</option>
+                        <option value="red">Red</option>
+                        <option value="blue">Blue</option>
+                        <option value="green">Green</option>
+                        <option value="yellow">Yellow</option>
+                        <option value="purple">Purple</option>
+                        <option value="black">Black/Dark</option>
                     </select>
                     <select id="a-sleep" required>
                         <option value="" disabled selected>Average Sleep Time</option>
-                        <option value="4">Less than 5 hours</option><option value="6">5-7 hours</option>
-                        <option value="8">8-9 hours</option><option value="10">10+ hours (Hibernation)</option>
+                        <option value="4">Less than 5 hours</option>
+                        <option value="6">5-7 hours</option>
+                        <option value="8">8-9 hours</option>
+                        <option value="10">10+ hours (Hibernation)</option>
                     </select>
                     <select id="a-weekend" required>
                         <option value="" disabled selected>Ideal Weekend Activity</option>
-                        <option value="party">Partying / Socializing</option><option value="nature">Hiking / Nature</option>
-                        <option value="read">Reading / Gaming</option><option value="sleep">Sleeping</option>
+                        <option value="party">Partying / Socializing</option>
+                        <option value="nature">Hiking / Nature</option>
+                        <option value="read">Reading / Gaming indoors</option>
+                        <option value="sleep">Sleeping / Relaxing</option>
+                        <option value="create">Art / Creating</option>
                     </select>
-                    <input type="text" id="a-vacation" placeholder="Dream Vacation" required>
+                    <input type="text" id="a-vacation" placeholder="Dream Vacation Destination" required>
                     <select id="a-season" required>
                         <option value="" disabled selected>Favorite Season</option>
-                        <option value="spring">Spring</option><option value="summer">Summer</option>
-                        <option value="autumn">Autumn</option><option value="winter">Winter</option>
+                        <option value="spring">Spring</option>
+                        <option value="summer">Summer</option>
+                        <option value="autumn">Autumn</option>
+                        <option value="winter">Winter</option>
                     </select>
                     <select id="a-mood" required>
                         <option value="" disabled selected>Current Mood</option>
-                        <option value="happy">Happy</option><option value="chill">Chill</option>
-                        <option value="stressed">Stressed</option><option value="curious">Curious</option>
+                        <option value="happy">Happy / Energetic</option>
+                        <option value="chill">Chill / Calm</option>
+                        <option value="stressed">Stressed / Anxious</option>
+                        <option value="curious">Curious / Thoughtful</option>
                     </select>
-                    <input type="text" id="a-pet" placeholder="Favorite Pet" required>
-                    <input type="text" id="a-friends" placeholder="Friends describe you as..." required>
+                    <input type="text" id="a-pet" placeholder="Favorite Pet/Animal" required>
+                    <input type="text" id="a-friends" placeholder="One word friends use to describe you" required>
                 </div>
                 <div style="text-align: center; margin-top: 2.5rem;">
                     <button type="submit" class="btn btn-animal">Calculate Animal</button>
                 </div>
             </form>
         </div>
+
         <div class="glass-panel" id="animal-result">
             <div class="animal-avatar" id="animal-res-icon">🐼</div>
-            <div class="animal-name" id="animal-res-name"></div>
-            <div class="animal-desc" id="animal-res-desc"></div>
-            <div class="stats-grid"></div>
+            <div class="animal-name" id="animal-res-name">The Giant Panda</div>
+            <div class="animal-desc" id="animal-res-desc">You are peaceful, relaxed, and enjoy the simple things in life. You love your personal space and snacks.</div>
+            
+            <div class="stats-grid">
+                <!-- Injected via JavaScript -->
+            </div>
+            
             <div style="margin-top: 3.5rem;">
                 <button class="btn btn-animal" id="animal-share">Share Result</button>
                 <button class="btn btn-back" style="margin-bottom: 0; margin-left: 1rem;" id="animal-try-again">Try Again</button>
@@ -555,58 +604,846 @@
         </div>
     </div>
 
+    <!-- =========================================================
+         HTML: ADMIN PAGE
+         ========================================================= -->
     <div id="admin-page" class="page">
         <button class="btn btn-back" id="back-admin">← Back to Home</button>
+        
+        <!-- Passkey Lock Section -->
         <div class="glass-panel" id="admin-lock-sec" style="max-width: 450px; margin: 0 auto; text-align: center;">
             <div style="font-size: 4rem; margin-bottom: 1rem;">🔐</div>
             <h2>Admin Verification</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Please enter the secure key to access live visitor analytics.</p>
             <input type="password" id="admin-passkey" placeholder="Enter Admin Passkey" style="text-align: center;">
             <button class="btn btn-animal" id="verify-admin-btn" style="width: 100%;">Verify & Open Logs</button>
-            <button id="admin-bypass-btn" style="background: none; border: none; color: #a855f7; cursor: pointer; text-decoration: underline; margin-top: 1rem; font-size: 0.85rem;">Bypass for Testing</button>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1.5rem;">Hint: Try "rajath123" or bypass below</p>
+            <button id="admin-bypass-btn" style="background: none; border: none; color: #a855f7; cursor: pointer; text-decoration: underline; margin-top: 0.5rem; font-size: 0.85rem;">Bypass for Testing</button>
         </div>
+
+        <!-- Dashboard Content Section -->
         <div class="glass-panel" id="admin-dashboard-sec" style="display: none;">
             <h1 class="gradient-text" style="font-size: 2.5rem; margin-bottom: 1rem;">LIVE SITE ANALYTICS</h1>
+            <p style="color: var(--text-muted); text-align: center; margin-bottom: 2rem;">Real-time database updates for active user sessions and calculator entries.</p>
+            
             <div class="admin-tabs">
                 <button class="admin-tab-btn active" id="tab-btn-visits">👥 Traffic Logs</button>
                 <button class="admin-tab-btn" id="tab-btn-flames">🔥 FLAMES Submissions</button>
             </div>
+
+            <!-- Visits Log Table -->
             <div class="log-table-container" id="sec-visits-table">
                 <table class="log-table">
-                    <thead><tr><th>User ID</th><th>Device</th><th>Screen</th><th>Timestamp</th></tr></thead>
-                    <tbody id="visits-log-body"></tbody>
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Device</th>
+                            <th>Screen</th>
+                            <th>Browser Metadata</th>
+                            <th>Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody id="visits-log-body">
+                        <tr><td colspan="5" style="text-align: center; color: var(--text-muted);">Syncing traffic logs...</td></tr>
+                    </tbody>
                 </table>
             </div>
+
+            <!-- Flames Log Table -->
             <div class="log-table-container" id="sec-flames-table" style="display: none;">
                 <table class="log-table">
-                    <thead><tr><th>Name 1</th><th>Name 2</th><th>Outcome</th><th>Score</th></tr></thead>
-                    <tbody id="flames-log-body"></tbody>
+                    <thead>
+                        <tr>
+                            <th>Name 1</th>
+                            <th>Name 2</th>
+                            <th>Outcome</th>
+                            <th>Score</th>
+                            <th>Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody id="flames-log-body">
+                        <tr><td colspan="5" style="text-align: center; color: var(--text-muted);">Syncing calculator outcomes...</td></tr>
+                    </tbody>
                 </table>
             </div>
         </div>
     </div>
 
+
+    <!-- =========================================================
+         JAVASCRIPT
+         ========================================================= -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { getFirestore, collection, addDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-        // Logic here matches the provided artifact structure
-        const pages = ['home', 'flames', 'duck', 'animal', 'admin'];
-        window.showPage = function(pId) {
-            pages.forEach(p => document.getElementById(p + '-page').classList.remove('active'));
-            document.getElementById(pId + '-page').classList.add('active');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-        
-        ['flames', 'duck', 'animal', 'admin'].forEach(p => {
-            document.getElementById('nav-' + p)?.addEventListener('click', () => showPage(p));
-            document.getElementById('back-' + p)?.addEventListener('click', () => showPage('home'));
-        });
-        document.getElementById('open-admin-btn').addEventListener('click', () => showPage('admin'));
+        // Firebase Integration Constants
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'rajaths-ai-project';
+        let db = null;
+        let auth = null;
+        let isFirebaseConnected = false;
 
-        // Initialize particles, authentication placeholders, logic for features as per user's requirement.
-        console.log("App ready.");
-        // (Full logic from previously developed state persists here)
+        // Offline storage lists for fallback simulations (prevents errors if firebase fails or is not injected)
+        const offlineVisits = [];
+        const offlineFlames = [];
+
+        // Auto-configure with provided workspace token & configs safely
+        if (typeof __firebase_config !== 'undefined' && __firebase_config) {
+            try {
+                const firebaseConfig = JSON.parse(__firebase_config);
+                const app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+                isFirebaseConnected = true;
+            } catch (err) {
+                console.warn("Failed to initialize remote database config. Running offline sandbox modes.", err);
+            }
+        }
+
+        /* ---------------------------------------------------------
+           1. UTILS & NAVIGATION
+           --------------------------------------------------------- */
+        const pages = ['home', 'flames', 'duck', 'animal', 'admin'];
+
+        window.showPage = function(pageId) {
+            pages.forEach(p => {
+                document.getElementById(p + '-page').classList.remove('active');
+            });
+            document.getElementById(pageId + '-page').classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Reset states if leaving pages
+            if(pageId !== 'duck') resetDuck();
+        };
+
+        // Nav Listeners
+        document.getElementById('nav-flames').addEventListener('click', () => showPage('flames'));
+        document.getElementById('nav-duck').addEventListener('click', () => showPage('duck'));
+        document.getElementById('nav-animal').addEventListener('click', () => showPage('animal'));
+        document.getElementById('open-admin-btn').addEventListener('click', () => showPage('admin'));
+        
+        document.getElementById('back-flames').addEventListener('click', () => showPage('home'));
+        document.getElementById('back-duck').addEventListener('click', () => showPage('home'));
+        document.getElementById('back-animal').addEventListener('click', () => showPage('home'));
+        document.getElementById('back-admin').addEventListener('click', () => showPage('home'));
+
+        /* ---------------------------------------------------------
+           2. PARTICLES BACKGROUND
+           --------------------------------------------------------- */
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+                this.alpha = Math.random() * 0.5 + 0.1;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x > canvas.width) this.x = 0;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                if (this.y < 0) this.y = canvas.height;
+            }
+            draw() {
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 100; i++) particles.push(new Particle());
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // Confetti function for special results
+        window.throwConfetti = function() {
+            for(let i=0; i<50; i++) {
+                let conf = document.createElement('div');
+                conf.style.position = 'fixed';
+                conf.style.width = '10px'; conf.style.height = '10px';
+                conf.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`;
+                conf.style.left = Math.random() * 100 + 'vw';
+                conf.style.top = '-10px';
+                conf.style.zIndex = '9999';
+                conf.style.pointerEvents = 'none';
+                conf.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                document.body.appendChild(conf);
+
+                let duration = Math.random() * 2 + 2;
+                conf.animate([
+                    { transform: `translate3d(0,0,0) rotate(0deg)`, opacity: 1 },
+                    { transform: `translate3d(${Math.random()*200 - 100}px, 100vh, 0) rotate(${Math.random()*720}deg)`, opacity: 0 }
+                ], { duration: duration * 1000, easing: 'cubic-bezier(.37,0,.63,1)' });
+
+                setTimeout(() => conf.remove(), duration * 1000);
+            }
+        };
+
+        /* ---------------------------------------------------------
+           3. REALTIME TRACKING LOGIC
+           --------------------------------------------------------- */
+        let currentUserId = 'OfflineUser_' + Math.random().toString(36).substr(2, 5);
+
+        async function initAuthAndLogging() {
+            if (!isFirebaseConnected) {
+                // If not connected to dynamic firebase workspace configs, run in fully featured local fallback mode
+                logUserVisitOffline();
+                return;
+            }
+            try {
+                let userCred;
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    userCred = await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    userCred = await signInAnonymously(auth);
+                }
+                const user = userCred.user;
+                if (user) {
+                    currentUserId = user.uid;
+                    await logUserVisit(user.uid);
+                    listenToAnalyticsUpdates();
+                }
+            } catch (err) {
+                console.error("Database connection sequence failed. Reverting to sandbox storage.", err);
+                logUserVisitOffline();
+            }
+        }
+
+        // Offline Fallback visits logging
+        function logUserVisitOffline() {
+            const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+            const mockVisit = {
+                userId: currentUserId,
+                device: isMobile ? "Mobile / Tablet" : "Desktop / Laptop",
+                screen: `${window.innerWidth}x${window.innerHeight}`,
+                userAgent: navigator.userAgent.split(')')[0] + ')',
+                timestamp: new Date()
+            };
+            offlineVisits.push(mockVisit);
+            updateVisitsTableUI(offlineVisits);
+            updateFlamesTableUI(offlineFlames);
+        }
+
+        async function logUserVisit(uid) {
+            if (!isFirebaseConnected) return;
+            try {
+                const userAgent = navigator.userAgent;
+                const isMobile = /Mobi|Android|iPhone|iPad/i.test(userAgent);
+                const screenRes = `${window.innerWidth}x${window.innerHeight}`;
+                
+                // STRICT RULE 1 compliance
+                const visitsCol = collection(db, 'artifacts', appId, 'public', 'data', 'visits');
+                await addDoc(visitsCol, {
+                    userId: uid,
+                    device: isMobile ? "Mobile / Tablet" : "Desktop / Laptop",
+                    screen: screenRes,
+                    userAgent: userAgent.split(')')[0] + ')',
+                    timestamp: new Date()
+                });
+            } catch (err) {
+                console.error("Failed to post real-time tracking logs:", err);
+            }
+        }
+
+        async function logFlamesEntry(n1, n2, result, score) {
+            const entryObj = {
+                name1: n1,
+                name2: n2,
+                result: result,
+                score: score,
+                timestamp: new Date()
+            };
+            
+            if (!isFirebaseConnected) {
+                offlineFlames.push(entryObj);
+                updateFlamesTableUI(offlineFlames);
+                return;
+            }
+            try {
+                const flamesCol = collection(db, 'artifacts', appId, 'public', 'data', 'flames_entries');
+                await addDoc(flamesCol, entryObj);
+            } catch (err) {
+                console.error("Failed to commit Flames telemetry entry:", err);
+            }
+        }
+
+        // Realtime database feed mapping
+        function listenToAnalyticsUpdates() {
+            if (!isFirebaseConnected) return;
+
+            const visitsCol = collection(db, 'artifacts', appId, 'public', 'data', 'visits');
+            const flamesCol = collection(db, 'artifacts', appId, 'public', 'data', 'flames_entries');
+
+            // STRICT RULE 2 - No complex order queries in code. Sort in JS Memory.
+            onSnapshot(visitsCol, (snapshot) => {
+                const list = [];
+                snapshot.forEach(doc => {
+                    const data = doc.data();
+                    list.push(data);
+                });
+                list.sort((a, b) => b.timestamp?.toDate() - a.timestamp?.toDate());
+                updateVisitsTableUI(list);
+            }, (err) => console.error("Visits DB error:", err));
+
+            onSnapshot(flamesCol, (snapshot) => {
+                const list = [];
+                snapshot.forEach(doc => {
+                    const data = doc.data();
+                    list.push(data);
+                });
+                list.sort((a, b) => b.timestamp?.toDate() - a.timestamp?.toDate());
+                updateFlamesTableUI(list);
+            }, (err) => console.error("Flames DB error:", err));
+        }
+
+        function updateVisitsTableUI(visits) {
+            const body = document.getElementById('visits-log-body');
+            if (visits.length === 0) {
+                body.innerHTML = `<tr><td colspan="5" style="text-align:center; color: var(--text-muted);">No entries yet.</td></tr>`;
+                return;
+            }
+            body.innerHTML = visits.map(v => {
+                const date = v.timestamp instanceof Date ? v.timestamp.toLocaleString() : (v.timestamp ? v.timestamp.toDate().toLocaleString() : 'Just now');
+                return `
+                    <tr>
+                        <td style="color:#a855f7; font-weight:bold; font-family:monospace;">${v.userId}</td>
+                        <td>${v.device}</td>
+                        <td>${v.screen}</td>
+                        <td style="color:var(--text-muted); font-size:0.8rem;">${v.userAgent}</td>
+                        <td style="color:var(--theme-duck); font-weight:bold;">${date}</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function updateFlamesTableUI(entries) {
+            const body = document.getElementById('flames-log-body');
+            if (entries.length === 0) {
+                body.innerHTML = `<tr><td colspan="5" style="text-align:center; color: var(--text-muted);">No logs yet. Try typing name entries.</td></tr>`;
+                return;
+            }
+            body.innerHTML = entries.map(e => {
+                const date = e.timestamp instanceof Date ? e.timestamp.toLocaleString() : (e.timestamp ? e.timestamp.toDate().toLocaleString() : 'Just now');
+                let resColor = '#fff';
+                if(e.result === 'LOVE') resColor = '#ef4444';
+                if(e.result === 'MARRIAGE') resColor = '#eab308';
+                if(e.result === 'ENEMIES') resColor = '#10b981';
+
+                return `
+                    <tr>
+                        <td style="text-transform: capitalize; font-weight:bold;">${e.name1}</td>
+                        <td style="text-transform: capitalize; font-weight:bold;">${e.name2}</td>
+                        <td style="color:${resColor}; font-weight:900; letter-spacing:1px;">${e.result}</td>
+                        <td style="color:#60a5fa; font-weight:bold;">${e.score}%</td>
+                        <td style="color:var(--text-muted); font-size:0.8rem;">${date}</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        // Initialize logging flow immediately on startup
+        initAuthAndLogging();
+
+        /* ---------------------------------------------------------
+           4. FLAMES CALCULATOR LOGIC
+           --------------------------------------------------------- */
+        const flamesForm = document.getElementById('flames-form');
+        const flamesInputSec = document.getElementById('flames-input-section');
+        const flamesResultSec = document.getElementById('flames-result');
+
+        const flamesData = {
+            'F': { title: 'FRIENDS', color: '#3b82f6', icon: '🤝', desc: 'You guys are great friends! A solid bond built on trust, fun, and mutual support.', theme: ['#93c5fd', '#3b82f6'] },
+            'L': { title: 'LOVE', color: '#ef4444', icon: '❤️', desc: 'Deep love and romance. You two share a beautiful connection and understand each other without words.', theme: ['#fda4af', '#ef4444'] },
+            'A': { title: 'AFFECTION', color: '#f472b6', icon: '🥰', desc: 'There is a strong mutual affection and caring nature between you two. Warmth and sweetness defines you.', theme: ['#fbcfe8', '#db2777'] },
+            'M': { title: 'MARRIAGE', color: '#eab308', icon: '💍', desc: 'Wedding bells! A lifelong commitment, companionable peace, and eternal loyalty shines in your future.', theme: ['#fef08a', '#ca8a04'] },
+            'E': { title: 'ENEMIES', color: '#10b981', icon: '⚔️', desc: 'Uh oh. There is intense friction. Keep a safe distance or solve your communication issues immediately!', theme: ['#6ee7b7', '#059669'] },
+            'S': { title: 'SIBLINGS', color: '#8b5cf6', icon: '👨‍👩‍👧‍👦', desc: 'A brotherly/sisterly bond. You protect and annoy each other equally, yet always have each other\'s backs.', theme: ['#ddd6fe', '#7c3aed'] }
+        };
+
+        flamesForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let n1 = document.getElementById('flames-name1').value.trim().toLowerCase();
+            let n2 = document.getElementById('flames-name2').value.trim().toLowerCase();
+            
+            if(!n1 || !n2) return;
+
+            // SPECIAL RULE OVERRIDE
+            if ((n1 === 'rajath' && n2 === 'rohini') || (n1 === 'rohini' && n2 === 'rajath')) {
+                const finalScore = Math.floor(Math.random() * 6) + 95;
+                showFlamesResult({
+                    title: 'LOVE', color: '#ef4444', icon: '❤️🔥', 
+                    desc: "He will lick every inch of your body or suck your boobs hard. You two are made for each other. Pure passion!", 
+                    theme: ['#fda4af', '#ef4444']
+                }, finalScore, [100, 98, 96, 99, 100]); // 95-100 score
+                throwConfetti();
+                logFlamesEntry(n1, n2, 'LOVE', finalScore);
+                return;
+            }
+
+            // Standard FLAMES Logic
+            let name1Arr = n1.replace(/\s+/g, '').split('');
+            let name2Arr = n2.replace(/\s+/g, '').split('');
+            
+            for (let i = 0; i < name1Arr.length; i++) {
+                for (let j = 0; j < name2Arr.length; j++) {
+                    if (name1Arr[i] === name2Arr[j]) {
+                        name1Arr[i] = '*'; name2Arr[j] = '*'; break;
+                    }
+                }
+            }
+            let count = name1Arr.filter(c => c !== '*').length + name2Arr.filter(c => c !== '*').length;
+            
+            if (count === 0) {
+                showFlamesResult(flamesData['E'], 10, [10, 50, 20, 10, 0]);
+                logFlamesEntry(n1, n2, 'ENEMIES', 10);
+                return;
+            }
+
+            let flamesStr = ['F', 'L', 'A', 'M', 'E', 'S'];
+            while (flamesStr.length > 1) {
+                let splitIndex = (count % flamesStr.length) - 1;
+                if (splitIndex >= 0) {
+                    let right = flamesStr.slice(splitIndex + 1);
+                    let left = flamesStr.slice(0, splitIndex);
+                    flamesStr = right.concat(left);
+                } else {
+                    flamesStr.pop();
+                }
+            }
+
+            let resultChar = flamesStr[0];
+            let baseScore = 0;
+            let stats = [];
+
+            switch(resultChar) {
+                case 'L': baseScore = 85 + Math.random()*10; stats = [90, 85, 80, 85, 95]; break;
+                case 'M': baseScore = 90 + Math.random()*9; stats = [95, 90, 85, 70, 80]; break;
+                case 'F': baseScore = 70 + Math.random()*15; stats = [40, 90, 85, 95, 30]; break;
+                case 'A': baseScore = 60 + Math.random()*15; stats = [70, 60, 75, 65, 60]; break;
+                case 'S': baseScore = 50 + Math.random()*20; stats = [50, 80, 60, 90, 10]; break;
+                case 'E': baseScore = 10 + Math.random()*20; stats = [5, 10, 20, 50, 80]; break;
+            }
+
+            stats = stats.map(s => Math.min(100, Math.max(0, s + Math.floor(Math.random()*15 - 7))));
+            
+            const finalComputedScore = Math.floor(baseScore);
+            if(finalComputedScore > 90) throwConfetti();
+
+            showFlamesResult(flamesData[resultChar], finalComputedScore, stats);
+            logFlamesEntry(n1, n2, flamesData[resultChar].title, finalComputedScore);
+        });
+
+        function showFlamesResult(data, score, stats) {
+            flamesInputSec.style.display = 'none';
+            flamesResultSec.style.display = 'block';
+
+            document.getElementById('flames-result-icon').innerText = data.icon;
+            let titleEl = document.getElementById('flames-result-title');
+            titleEl.innerText = data.title;
+            titleEl.style.color = data.color;
+            
+            document.getElementById('flames-result-score').innerText = `Compatibility: ${score}%`;
+            document.getElementById('flames-result-desc').innerText = data.desc;
+
+            // Reset bars
+            for(let i=1; i<=5; i++) {
+                document.getElementById(`flames-p${i}`).style.width = '0%';
+                document.getElementById(`flames-p${i}-val`).innerText = '0%';
+                document.getElementById(`flames-p${i}`).style.background = `linear-gradient(90deg, ${data.theme[0]}, ${data.theme[1]})`;
+            }
+
+            // Animate bars
+            setTimeout(() => {
+                for(let i=1; i<=5; i++) {
+                    document.getElementById(`flames-p${i}`).style.width = `${stats[i-1]}%`;
+                    
+                    let current = 0;
+                    let target = stats[i-1];
+                    let interval = setInterval(() => {
+                        current += 2;
+                        if(current >= target) { current = target; clearInterval(interval); }
+                        document.getElementById(`flames-p${i}-val`).innerText = `${current}%`;
+                    }, 20);
+                }
+            }, 100);
+        }
+
+        document.getElementById('flames-try-again').addEventListener('click', () => {
+            flamesResultSec.style.display = 'none';
+            flamesInputSec.style.display = 'block';
+            document.getElementById('flames-form').reset();
+        });
+
+
+        /* ---------------------------------------------------------
+           5. NO TOUCH DUCK LOGIC
+           --------------------------------------------------------- */
+        const duckArena = document.getElementById('duck-arena');
+        const duck = document.getElementById('the-duck');
+        const duckSpeech = document.getElementById('duck-speech');
+        const duckScoreEl = document.getElementById('duck-score');
+        
+        const duckEyes = document.getElementById('duck-eyes');
+        const duckTears = document.getElementById('duck-tears');
+        const duckBeak = document.getElementById('duck-beak');
+        const duckBody = document.getElementById('duck-body');
+        const duckHead = document.getElementById('duck-head');
+
+        let clickCount = 0;
+        let isBossMode = false;
+        let speechTimeout;
+        let mouseX = 0, mouseY = 0;
+        let duckX = 0, duckY = 0;
+
+        window.resetDuck = function() {
+            clickCount = 0;
+            isBossMode = false;
+            duckScoreEl.innerText = '0';
+            duckArena.classList.remove('boss-mode-bg');
+            duck.classList.remove('duck-evil');
+            duck.style.left = '50%';
+            duck.style.top = '50%';
+            duck.style.transform = `translate(-50%, -50%)`;
+            duckBody.setAttribute('fill', '#facc15');
+            duckHead.setAttribute('fill', '#facc15');
+            duckSpeech.classList.remove('show');
+            updateDuckFace();
+        };
+
+        function showSpeech(text) {
+            clearTimeout(speechTimeout);
+            duckSpeech.innerText = text;
+            duckSpeech.classList.add('show');
+            speechTimeout = setTimeout(() => {
+                duckSpeech.classList.remove('show');
+            }, 2000);
+        }
+
+        function updateDuckFace() {
+            duckTears.setAttribute('opacity', '0');
+            
+            if (clickCount < 5) {
+                duckEyes.innerHTML = `
+                    <path d="M 62 30 Q 65 26 68 30" stroke="#000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <path d="M 75 30 Q 78 26 81 30" stroke="#000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                `;
+            } else if (clickCount < 10) {
+                duckEyes.innerHTML = `
+                    <line x1="62" y1="28" x2="68" y2="31" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+                    <line x1="75" y1="31" x2="81" y2="28" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+                    <circle cx="65" cy="32" r="2" fill="#000"/>
+                    <circle cx="78" cy="32" r="2" fill="#000"/>
+                `;
+            } else if (clickCount < 15) {
+                duckEyes.innerHTML = `
+                    <path d="M 60 26 L 68 31" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M 83 26 L 75 31" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+                    <circle cx="65" cy="33" r="2.5" fill="#000"/>
+                    <circle cx="78" cy="33" r="2.5" fill="#000"/>
+                `;
+                duckEyes.innerHTML += `<circle cx="60" cy="40" r="4" fill="rgba(239,68,68,0.5)"/><circle cx="83" cy="40" r="4" fill="rgba(239,68,68,0.5)"/>`;
+            } else if (clickCount < 20) {
+                duckEyes.innerHTML = `
+                    <line x1="62" y1="30" x2="68" y2="30" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+                    <path d="M 75 28 Q 78 26 81 28" stroke="#000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <circle cx="65" cy="32" r="2" fill="#000"/>
+                    <circle cx="78" cy="32" r="2" fill="#000"/>
+                `;
+            } else if (clickCount < 30) {
+                duckEyes.innerHTML = `
+                    <path d="M 62 30 Q 65 28 68 32" stroke="#000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <path d="M 75 32 Q 78 28 81 30" stroke="#000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <circle cx="65" cy="34" r="2" fill="#000"/>
+                    <circle cx="78" cy="34" r="2" fill="#000"/>
+                `;
+                duckTears.setAttribute('opacity', '1');
+            } else {
+                duckEyes.innerHTML = `
+                    <path d="M 60 25 L 68 32" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M 83 25 L 75 32" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+                    <circle cx="65" cy="34" r="4" fill="#dc2626" filter="drop-shadow(0 0 5px red)"/>
+                    <circle cx="78" cy="34" r="4" fill="#dc2626" filter="drop-shadow(0 0 5px red)"/>
+                `;
+                duckBody.setAttribute('fill', '#451a03');
+                duckHead.setAttribute('fill', '#451a03');
+            }
+        }
+
+        function triggerDuckInteraction() {
+            clickCount++;
+            duckScoreEl.innerText = clickCount;
+            updateDuckFace();
+
+            const dialogues = {
+                happy: ["Please don't touch me.", "Hey!", "Not again.", "Excuse me.", "Stop that."],
+                annoyed: ["Seriously?", "Find something else to do.", "Why me?", "I'm not a button.", "Okay, enough."],
+                angry: ["Do you have nothing better to do?", "Your mouse accuracy is scary.", "Leave me alone!", "I will bite.", "Grrrrr."],
+                roasting: ["Your hobbies concern me.", "You really paid for internet to chase a duck?", "Is this your full-time job?", "Touch grass.", "No maidens?"],
+                begging: ["Please...", "I'll give you cookies.", "I have a family.", "I'm just a simple duck.", "*Sob* Why..."]
+            };
+
+            let stateStr = '';
+            if (clickCount < 5) stateStr = 'happy';
+            else if (clickCount < 10) stateStr = 'annoyed';
+            else if (clickCount < 15) stateStr = 'angry';
+            else if (clickCount < 20) stateStr = 'roasting';
+            else if (clickCount < 30) stateStr = 'begging';
+
+            if (clickCount === 30) {
+                activateBossMode();
+            } else if (clickCount > 30) {
+                showSpeech("NOW HOW DOES IT FEEL?!");
+            } else {
+                let arr = dialogues[stateStr];
+                showSpeech(arr[Math.floor(Math.random() * arr.length)]);
+            }
+
+            if (!isBossMode) jumpDuck();
+        }
+
+        function jumpDuck() {
+            const rect = duckArena.getBoundingClientRect();
+            let newX = 40 + Math.random() * (rect.width - 80);
+            let newY = 40 + Math.random() * (rect.height - 80);
+
+            duck.style.left = `${newX}px`;
+            duck.style.top = `${newY}px`;
+            duck.style.transform = `translate(-50%, -50%) rotate(${Math.random()*20-10}deg)`;
+        }
+
+        duck.addEventListener('mouseover', () => {
+            if (!isBossMode) jumpDuck();
+        });
+
+        duck.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            triggerDuckInteraction();
+        });
+        
+        duck.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            triggerDuckInteraction();
+        }, {passive: false});
+
+        function activateBossMode() {
+            isBossMode = true;
+            duckArena.classList.add('boss-mode-bg');
+            duck.classList.add('duck-evil');
+            showSpeech("YOU ASKED FOR IT!");
+            
+            duckX = duck.offsetLeft;
+            duckY = duck.offsetTop;
+
+            requestAnimationFrame(bossChaseLoop);
+        }
+
+        duckArena.addEventListener('mousemove', (e) => {
+            if(!isBossMode) return;
+            const rect = duckArena.getBoundingClientRect();
+            mouseX = e.clientX - rect.left - 40;
+            mouseY = e.clientY - rect.top - 40;
+        });
+
+        duckArena.addEventListener('touchmove', (e) => {
+            if(!isBossMode) return;
+            const rect = duckArena.getBoundingClientRect();
+            mouseX = e.touches[0].clientX - rect.left - 40;
+            mouseY = e.touches[0].clientY - rect.top - 40;
+        }, {passive: true});
+
+        function bossChaseLoop() {
+            if (!isBossMode) return;
+            
+            let dx = mouseX - duckX;
+            let dy = mouseY - duckY;
+            let dist = Math.sqrt(dx*dx + dy*dy);
+            
+            let speed = 4 + (clickCount - 30) * 0.1;
+            speed = Math.min(speed, 12);
+
+            if (dist > 5) {
+                duckX += (dx / dist) * speed;
+                duckY += (dy / dist) * speed;
+            }
+
+            let scaleX = dx > 0 ? 1 : -1;
+            
+            duck.style.left = `${duckX}px`;
+            duck.style.top = `${duckY}px`;
+            duck.style.transform = `translate(-50%, -50%) scaleX(${scaleX})`;
+            
+            requestAnimationFrame(bossChaseLoop);
+        }
+
+        /* ---------------------------------------------------------
+           6. ANIMAL PERSONALITY LOGIC
+           --------------------------------------------------------- */
+        const animalsDb = [
+            { name: "Red Panda", icon: "🐼", desc: "Cute but secretly chaotic. You enjoy naps, snacks, and slightly inconveniencing others in an adorable way.", stats: [60, 50, 80, 20, 90, 85, 40, 70] },
+            { name: "Fox", icon: "🦊", desc: "Clever, adaptable, and a bit mischievous. You can navigate any social situation but love your independence.", stats: [80, 70, 90, 60, 85, 50, 85, 95] },
+            { name: "Wolf", icon: "🐺", desc: "Fiercely loyal to your inner circle. You have strong instincts, value deep connections, and make a great leader.", stats: [85, 80, 60, 95, 40, 70, 90, 85] },
+            { name: "Lion", icon: "🦁", desc: "Bold, confident, and natural leaders. You have a commanding presence but also sleep 20 hours a day.", stats: [70, 85, 50, 100, 60, 65, 80, 75] },
+            { name: "Tiger", icon: "🐯", desc: "Independent, powerful, and mysterious. You prefer working alone and deeply trust your own judgment.", stats: [90, 30, 70, 80, 50, 40, 95, 85] },
+            { name: "Owl", icon: "🦉", desc: "Wise, observant, and a night owl. You prefer quiet environments where you can think and analyze.", stats: [30, 20, 85, 40, 60, 75, 50, 100] },
+            { name: "Penguin", icon: "🐧", desc: "Dressed for success but extremely clumsy. You are highly social, dedicated, and thrive in community settings.", stats: [60, 95, 50, 60, 80, 90, 40, 65] },
+            { name: "Dolphin", icon: "🐬", desc: "Highly intelligent, playful, and communicative. You are the life of the party and solve problems creatively.", stats: [95, 95, 85, 75, 90, 85, 90, 95] },
+            { name: "Golden Retriever", icon: "🐕", desc: "Pure sunshine. You are incredibly friendly, loyal, always optimistic, and easily distracted by food.", stats: [90, 100, 40, 50, 80, 100, 70, 60] },
+            { name: "Cat", icon: "🐈", desc: "Independent, sassy, and demanding of affection (but only on your terms). You knock things off tables.", stats: [50, 30, 80, 40, 70, 30, 60, 85] },
+            { name: "Rabbit", icon: "🐇", desc: "Gentle, quick, and a bit anxious. You appreciate a peaceful environment and have a great eye for detail.", stats: [85, 40, 60, 20, 50, 80, 40, 65] },
+            { name: "Koala", icon: "🐨", desc: "You just want to eat, sleep, and be comfortable. Stress is completely foreign to your ideal lifestyle.", stats: [10, 30, 40, 10, 40, 80, 10, 50] },
+            { name: "Sloth", icon: "🦥", desc: "Master of relaxation. You take life at your own pace and refuse to let modern hustle culture affect you.", stats: [5, 20, 50, 5, 60, 90, 5, 60] },
+            { name: "Elephant", icon: "🐘", desc: "Wise, empathetic, and family-oriented. You never forget a kindness and are extremely protective of loved ones.", stats: [40, 80, 60, 85, 50, 95, 60, 90] },
+            { name: "Eagle", icon: "🦅", desc: "Visionary, focused, and ambitious. You look at the big picture and soar above petty drama.", stats: [85, 30, 70, 90, 30, 40, 95, 80] },
+            { name: "Bear", icon: "🐻", desc: "Strong but huggable. You love the outdoors, require a lot of sleep, and are fiercely protective.", stats: [60, 40, 50, 80, 60, 75, 70, 70] },
+            { name: "Otter", icon: "🦦", desc: "Playful, joyful, and creative. You find fun in everything and love holding hands with your favorite people.", stats: [90, 90, 85, 50, 95, 90, 80, 85] },
+            { name: "Peacock", icon: "🦚", desc: "Glamorous, confident, and expressive. You know you look good and aren't afraid to show off your unique style.", stats: [70, 80, 90, 70, 60, 50, 50, 70] },
+            { name: "Octopus", icon: "🐙", desc: "Highly adaptable, solitary genius. You can squeeze out of tricky situations and have an incredible mind.", stats: [50, 10, 100, 30, 60, 40, 70, 100] },
+            { name: "Capybara", icon: "🐹", desc: "The ultimate vibe-checker. You are chilling at maximum levels and get along with literally everyone.", stats: [20, 100, 30, 40, 70, 100, 20, 60] }
+        ];
+
+        const statLabels = ['Energy', 'Social', 'Creativity', 'Leadership', 'Humor', 'Kindness', 'Adventure', 'Intelligence'];
+
+        document.getElementById('animal-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const inputs = document.querySelectorAll('#animal-form input, #animal-form select');
+            let combinedString = '';
+            inputs.forEach(i => combinedString += i.value);
+
+            let hash = 0;
+            for (let i = 0; i < combinedString.length; i++) {
+                hash = combinedString.charCodeAt(i) + ((hash << 5) - hash);
+            }
+            hash = Math.abs(hash);
+            
+            const animalIndex = hash % animalsDb.length;
+            const animal = animalsDb[animalIndex];
+
+            document.getElementById('animal-input-section').style.display = 'none';
+            document.getElementById('animal-result').style.display = 'block';
+
+            document.getElementById('animal-res-icon').innerText = animal.icon;
+            document.getElementById('animal-res-name').innerText = animal.name;
+            document.getElementById('animal-res-desc').innerText = `"${combinedString.substring(0, Math.min(combinedString.length, 10))}..." reveals that you are a ${animal.name}. \n\n${animal.desc}`;
+
+            const statsGrid = document.querySelector('.stats-grid');
+            statsGrid.innerHTML = '';
+            
+            animal.stats.forEach((val, idx) => {
+                const colorHue = (idx * 40) % 360;
+                statsGrid.innerHTML += `
+                    <div class="stat-row">
+                        <div class="stat-label"><span>${statLabels[idx]}</span><span id="anim-val-${idx}">0%</span></div>
+                        <div class="progress-bg"><div class="progress-fill" id="anim-bar-${idx}" style="background: hsl(${colorHue}, 70%, 60%);"></div></div>
+                    </div>
+                `;
+            });
+
+            setTimeout(() => {
+                animal.stats.forEach((val, idx) => {
+                    document.getElementById(`anim-bar-${idx}`).style.width = `${val}%`;
+                    let current = 0;
+                    let interval = setInterval(() => {
+                        current += 2;
+                        if(current >= val) { current = val; clearInterval(interval); }
+                        document.getElementById(`anim-val-${idx}`).innerText = `${current}%`;
+                    }, 20);
+                });
+            }, 100);
+
+            throwConfetti();
+        });
+
+        document.getElementById('animal-try-again').addEventListener('click', () => {
+            document.getElementById('animal-result').style.display = 'none';
+            document.getElementById('animal-input-section').style.display = 'block';
+            document.getElementById('animal-form').reset();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        document.getElementById('animal-share').addEventListener('click', () => {
+            const animalName = document.getElementById('animal-res-name').innerText;
+            const text = `I just found out my Spirit Animal is the ${animalName} on Rajath's AI Project! 🐼✨ Find out yours!`;
+            if (navigator.share) {
+                navigator.share({ title: 'My Spirit Animal', text: text });
+            } else {
+                navigator.clipboard.writeText(text);
+                const btn = document.getElementById('animal-share');
+                btn.innerText = "Copied!";
+                setTimeout(() => btn.innerText = "Share Result", 2000);
+            }
+        });
+
+        /* ---------------------------------------------------------
+           7. ADMIN PANEL VERIFICATION & TABS
+           --------------------------------------------------------- */
+        const verifyBtn = document.getElementById('verify-admin-btn');
+        const bypassBtn = document.getElementById('admin-bypass-btn');
+        const passkeyInput = document.getElementById('admin-passkey');
+        const lockSec = document.getElementById('admin-lock-sec');
+        const dashboardSec = document.getElementById('admin-dashboard-sec');
+
+        function unlockAdmin() {
+            lockSec.style.display = 'none';
+            dashboardSec.style.display = 'block';
+        }
+
+        verifyBtn.addEventListener('click', () => {
+            if (passkeyInput.value === 'rajath123') {
+                unlockAdmin();
+            } else {
+                passkeyInput.style.borderColor = '#ef4444';
+                passkeyInput.value = '';
+                passkeyInput.placeholder = 'Wrong Key! Try again.';
+                setTimeout(() => {
+                    passkeyInput.style.borderColor = 'rgba(255,255,255,0.12)';
+                    passkeyInput.placeholder = 'Enter Admin Passkey';
+                }, 2000);
+            }
+        });
+
+        bypassBtn.addEventListener('click', unlockAdmin);
+
+        const tabVisits = document.getElementById('tab-btn-visits');
+        const tabFlames = document.getElementById('tab-btn-flames');
+        const secVisits = document.getElementById('sec-visits-table');
+        const secFlames = document.getElementById('sec-flames-table');
+
+        tabVisits.addEventListener('click', () => {
+            tabVisits.classList.add('active');
+            tabFlames.classList.remove('active');
+            secVisits.style.display = 'block';
+            secFlames.style.display = 'none';
+        });
+
+        tabFlames.addEventListener('click', () => {
+            tabFlames.classList.add('active');
+            tabVisits.classList.remove('active');
+            secFlames.style.display = 'block';
+            secVisits.style.display = 'none';
+        });
+
     </script>
 </body>
 </html>
