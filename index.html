@@ -7,7 +7,7 @@
     <title>Rajath's AI Project</title>
     <!-- Google Fonts: Modern Rounded and Premium Tech Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;800;900&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --bg-dark: #07080d;
@@ -16,14 +16,14 @@
             --glass-border: rgba(255, 255, 255, 0.07);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            
+
             --theme-flames: #ef4444;
             --theme-flames-gradient: linear-gradient(135deg, #f97316, #ef4444);
             --theme-duck: #eab308;
             --theme-duck-gradient: linear-gradient(135deg, #facc15, #eab308);
             --theme-animal: #a855f7;
             --theme-animal-gradient: linear-gradient(135deg, #a855f7, #6366f1);
-            
+
             --font-main: 'Nunito', sans-serif;
             --font-display: 'Space Grotesk', sans-serif;
         }
@@ -164,7 +164,7 @@
         .btn-flames { background: var(--theme-flames-gradient); box-shadow: 0 0 25px rgba(239, 68, 68, 0.45); }
         .btn-duck { background: var(--theme-duck-gradient); color: #07080d; box-shadow: 0 0 25px rgba(234, 179, 8, 0.45); }
         .btn-animal { background: var(--theme-animal-gradient); box-shadow: 0 0 25px rgba(168, 85, 247, 0.45); }
-        
+
         .btn-back {
             background: rgba(255,255,255,0.06);
             border: 1px solid rgba(255,255,255,0.12);
@@ -241,7 +241,7 @@
 
         .nav-card h2 { margin: 1.2rem 0; font-size: 2rem; }
         .nav-card p { color: var(--text-muted); margin-bottom: 2.5rem; flex-grow: 1; line-height: 1.6; font-size: 1rem; }
-        
+
         .card-icon {
             font-size: 4.5rem;
             margin-bottom: 1rem;
@@ -259,7 +259,7 @@
 
         #flames-page { text-align: center; }
         .flames-form-container { max-width: 520px; margin: 0 auto; width: 100%; }
-        
+
         #flames-result { display: none; margin-top: 1.5rem; }
         .result-title { font-size: 3.5rem; font-weight: 900; margin-bottom: 0.5rem; text-shadow: 0 0 20px currentColor; font-family: var(--font-display); word-break: break-word; }
         .result-score { font-size: 2.2rem; font-weight: bold; margin-bottom: 2rem; }
@@ -329,7 +329,7 @@
             grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
             gap: 1.5rem;
         }
-        
+
         #animal-result { display: none; text-align: center; }
         .animal-avatar {
             font-size: 6.5rem;
@@ -341,7 +341,7 @@
             box-shadow: 0 0 35px rgba(168, 85, 247, 0.35);
             animation: pulse 2.5s infinite;
         }
-        
+
         @keyframes pulse {
             0% { transform: scale(1); box-shadow: 0 0 30px rgba(168, 85, 247, 0.3); }
             50% { transform: scale(1.06); box-shadow: 0 0 55px rgba(168, 85, 247, 0.6); }
@@ -425,12 +425,12 @@
             z-index: 2000;
             padding: 1.5rem;
         }
-        
+
         .modal-overlay.active {
             display: flex;
             animation: fadeIn 0.3s ease;
         }
-        
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -518,11 +518,11 @@
          ========================================================= -->
     <div id="flames-page" class="page">
         <button class="btn btn-back" id="back-flames">← Back to Home</button>
-        
+
         <div class="glass-panel flames-form-container" id="flames-input-section">
             <h1 style="color: #ef4444; font-size: 2.6rem;">🔥 FLAMES 🔥</h1>
             <p style="color: var(--text-muted); margin-bottom: 2rem;">Discover your compatibility status with precision.</p>
-            
+
             <form id="flames-form">
                 <input type="text" id="flames-name1" placeholder="Your Name" required autocomplete="off">
                 <input type="text" id="flames-name2" placeholder="Partner/Friend Name" required autocomplete="off">
@@ -535,7 +535,7 @@
             <div class="result-title" id="flames-result-title">LOVE</div>
             <div class="result-score" id="flames-result-score">Compatibility: 96%</div>
             <div class="result-desc" id="flames-result-desc">You two are made for each other.</div>
-            
+
             <div style="max-width: 500px; margin: 0 auto; text-align: left;">
                 <div class="stat-row"><div class="stat-label"><span>Love</span><span id="flames-p1-val">0%</span></div><div class="progress-bg"><div class="progress-fill" id="flames-p1" style="background: linear-gradient(90deg, #f43f5e, #e11d48);"></div></div></div>
                 <div class="stat-row"><div class="stat-label"><span>Trust</span><span id="flames-p2-val">0%</span></div><div class="progress-bg"><div class="progress-fill" id="flames-p2" style="background: linear-gradient(90deg, #60a5fa, #2563eb);"></div></div></div>
@@ -543,7 +543,7 @@
                 <div class="stat-row"><div class="stat-label"><span>Fun</span><span id="flames-p4-val">0%</span></div><div class="progress-bg"><div class="progress-fill" id="flames-p4" style="background: linear-gradient(90deg, #fbbf24, #d97706);"></div></div></div>
                 <div class="stat-row"><div class="stat-label"><span>Chemistry</span><span id="flames-p5-val">0%</span></div><div class="progress-bg"><div class="progress-fill" id="flames-p5" style="background: linear-gradient(90deg, #c084fc, #9333ea);"></div></div></div>
             </div>
-            
+
             <button class="btn btn-back" style="margin-top: 2rem;" id="flames-try-again">Try Another Combination</button>
         </div>
     </div>
@@ -586,11 +586,11 @@
          ========================================================= -->
     <div id="animal-page" class="page">
         <button class="btn btn-back" id="back-animal">← Back to Home</button>
-        
+
         <div class="glass-panel" id="animal-input-section">
             <h1 style="color: #a855f7; font-size: 2.6rem; text-align: center;">🐼 SPIRIT ANIMAL 🐼</h1>
             <p style="text-align: center; color: var(--text-muted); margin-bottom: 2.5rem;">Answer with instinct to map your digital spirit animal.</p>
-            
+
             <form id="animal-form">
                 <div class="animal-form-grid">
                     <input type="text" id="a-name" placeholder="Your Name" required>
@@ -654,11 +654,11 @@
             <div class="animal-avatar" id="animal-res-icon">🐼</div>
             <div class="animal-name" id="animal-res-name">The Giant Panda</div>
             <div class="animal-desc" id="animal-res-desc">You are peaceful, relaxed, and enjoy the simple things in life. You love your personal space and snacks.</div>
-            
+
             <div class="stats-grid">
                 <!-- Injected via JavaScript -->
             </div>
-            
+
             <div style="margin-top: 3.5rem;">
                 <button class="btn btn-animal" id="animal-share">Share Result</button>
                 <button class="btn btn-back" style="margin-bottom: 0; margin-left: 1rem;" id="animal-try-again">Try Again</button>
@@ -671,7 +671,7 @@
          ========================================================= -->
     <div id="admin-page" class="page">
         <button class="btn btn-back" id="back-admin">← Back to Home</button>
-        
+
         <!-- Passkey Lock Section -->
         <div class="glass-panel" id="admin-lock-sec" style="max-width: 450px; margin: 0 auto; text-align: center;">
             <div style="font-size: 4rem; margin-bottom: 1rem;">🔐</div>
@@ -687,7 +687,7 @@
         <div class="glass-panel" id="admin-dashboard-sec" style="display: none;">
             <h1 class="gradient-text" style="font-size: 2.5rem; margin-bottom: 1rem;">LIVE SITE ANALYTICS</h1>
             <p style="color: var(--text-muted); text-align: center; margin-bottom: 2rem;">Real-time database updates for active user sessions and calculator entries.</p>
-            
+
             <div class="admin-tabs">
                 <button class="admin-tab-btn active" id="tab-btn-visits">👥 Traffic Logs</button>
                 <button class="admin-tab-btn" id="tab-btn-flames">🔥 FLAMES Submissions</button>
@@ -745,7 +745,7 @@
         let db = null;
         let auth = null;
         let isFirebaseConnected = false;
-        
+
         // Name Popup State Variables
         let currentUserName = '';
         let pendingGameId = '';
@@ -778,11 +778,11 @@
             });
             document.getElementById(pageId + '-page').classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            
+
             // Reset states if leaving pages
             if(pageId !== 'duck') resetDuck();
         };
-        
+
         // --- NAME POPUP LOGIC ---
         function showNamePopup(gameId) {
             if (currentUserName) {
@@ -793,21 +793,21 @@
             document.getElementById('name-modal-overlay').classList.add('active');
             document.getElementById('popup-player-name').focus();
         }
-        
+
         document.getElementById('name-popup-form').addEventListener('submit', (e) => {
             e.preventDefault();
             const nameInput = document.getElementById('popup-player-name').value.trim();
             if (nameInput) {
                 currentUserName = nameInput;
                 document.getElementById('name-modal-overlay').classList.remove('active');
-                
+
                 // Pre-fill name fields if entering Flames or Animal game
                 if(pendingGameId === 'flames') {
                     document.getElementById('flames-name1').value = currentUserName;
                 } else if(pendingGameId === 'animal') {
                     document.getElementById('a-name').value = currentUserName;
                 }
-                
+
                 enterGame(pendingGameId);
             }
         });
@@ -816,7 +816,7 @@
             document.getElementById('name-modal-overlay').classList.remove('active');
             pendingGameId = '';
         });
-        
+
         // --- FIREBASE ENTRY LOGGING ---
         async function saveGameEntry(gameName) {
             if (gameName !== 'flames' && gameName !== 'animal') return;
@@ -840,7 +840,7 @@
                 console.error("Failed to log game entry:", err);
             }
         }
-        
+
         async function enterGame(gameId) {
             await saveGameEntry(gameId); // Await the logging event before navigation
             showPage(gameId);
@@ -850,7 +850,7 @@
         document.getElementById('nav-flames').addEventListener('click', () => showNamePopup('flames'));
         document.getElementById('nav-duck').addEventListener('click', () => showNamePopup('duck'));
         document.getElementById('nav-animal').addEventListener('click', () => showNamePopup('animal'));
-        
+
         document.getElementById('open-admin-btn').addEventListener('click', () => showPage('admin'));
         document.getElementById('back-flames').addEventListener('click', () => showPage('home'));
         document.getElementById('back-duck').addEventListener('click', () => showPage('home'));
@@ -980,7 +980,7 @@
                 const userAgent = navigator.userAgent;
                 const isMobile = /Mobi|Android|iPhone|iPad/i.test(userAgent);
                 const screenRes = `${window.innerWidth}x${window.innerHeight}`;
-                
+
                 // STRICT RULE 1 compliance
                 const visitsCol = collection(db, 'artifacts', appId, 'public', 'data', 'visits');
                 await addDoc(visitsCol, {
@@ -1003,7 +1003,7 @@
                 score: score,
                 timestamp: new Date()
             };
-            
+
             if (!isFirebaseConnected) {
                 offlineFlames.push(entryObj);
                 updateFlamesTableUI(offlineFlames);
@@ -1114,15 +1114,15 @@
             e.preventDefault();
             let n1 = document.getElementById('flames-name1').value.trim().toLowerCase();
             let n2 = document.getElementById('flames-name2').value.trim().toLowerCase();
-            
+
             if(!n1 || !n2) return;
 
             // SPECIAL RULE OVERRIDE
             if ((n1 === 'rajath' && n2 === 'rohini') || (n1 === 'rohini' && n2 === 'rajath')) {
                 const finalScore = Math.floor(Math.random() * 6) + 95;
                 showFlamesResult({
-                    title: 'LOVE', color: '#ef4444', icon: '❤️🔥', 
-                    desc: "you have great sexual passion and compatibility. You two are made for each other. Pure passion!", 
+                    title: 'LOVE', color: '#ef4444', icon: '❤️🔥',
+                    desc: "you have great sexual passion and compatibility. You two are made for each other. Pure passion!",
                     theme: ['#fda4af', '#ef4444']
                 }, finalScore, [100, 98, 96, 99, 100]); // 95-100 score
                 throwConfetti();
@@ -1133,7 +1133,7 @@
             // Standard FLAMES Logic
             let name1Arr = n1.replace(/\s+/g, '').split('');
             let name2Arr = n2.replace(/\s+/g, '').split('');
-            
+
             for (let i = 0; i < name1Arr.length; i++) {
                 for (let j = 0; j < name2Arr.length; j++) {
                     if (name1Arr[i] === name2Arr[j]) {
@@ -1142,7 +1142,7 @@
                 }
             }
             let count = name1Arr.filter(c => c !== '*').length + name2Arr.filter(c => c !== '*').length;
-            
+
             if (count === 0) {
                 showFlamesResult(flamesData['E'], 10, [10, 50, 20, 10, 0]);
                 logFlamesEntry(n1, n2, 'ENEMIES', 10);
@@ -1175,7 +1175,7 @@
             }
 
             stats = stats.map(s => Math.min(100, Math.max(0, s + Math.floor(Math.random()*15 - 7))));
-            
+
             const finalComputedScore = Math.floor(baseScore);
             if(finalComputedScore > 90) throwConfetti();
 
@@ -1191,7 +1191,7 @@
             let titleEl = document.getElementById('flames-result-title');
             titleEl.innerText = data.title;
             titleEl.style.color = data.color;
-            
+
             document.getElementById('flames-result-score').innerText = `Compatibility: ${score}%`;
             document.getElementById('flames-result-desc').innerText = data.desc;
 
@@ -1206,7 +1206,7 @@
             setTimeout(() => {
                 for(let i=1; i<=5; i++) {
                     document.getElementById(`flames-p${i}`).style.width = `${stats[i-1]}%`;
-                    
+
                     let current = 0;
                     let target = stats[i-1];
                     let interval = setInterval(() => {
@@ -1236,7 +1236,7 @@
         const duck = document.getElementById('the-duck');
         const duckSpeech = document.getElementById('duck-speech');
         const duckScoreEl = document.getElementById('duck-score');
-        
+
         const duckEyes = document.getElementById('duck-eyes');
         const duckTears = document.getElementById('duck-tears');
         const duckBeak = document.getElementById('duck-beak');
@@ -1275,7 +1275,7 @@
 
         function updateDuckFace() {
             duckTears.setAttribute('opacity', '0');
-            
+
             if (clickCount < 5) {
                 duckEyes.innerHTML = `
                     <path d="M 62 30 Q 65 26 68 30" stroke="#000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
@@ -1373,7 +1373,7 @@
             e.preventDefault();
             triggerDuckInteraction();
         });
-        
+
         duck.addEventListener('touchstart', (e) => {
             e.preventDefault();
             triggerDuckInteraction();
@@ -1384,7 +1384,7 @@
             duckArena.classList.add('boss-mode-bg');
             duck.classList.add('duck-evil');
             showSpeech("YOU ASKED FOR IT!");
-            
+
             duckX = duck.offsetLeft;
             duckY = duck.offsetTop;
 
@@ -1407,11 +1407,11 @@
 
         function bossChaseLoop() {
             if (!isBossMode) return;
-            
+
             let dx = mouseX - duckX;
             let dy = mouseY - duckY;
             let dist = Math.sqrt(dx*dx + dy*dy);
-            
+
             let speed = 4 + (clickCount - 30) * 0.1;
             speed = Math.min(speed, 12);
 
@@ -1421,11 +1421,11 @@
             }
 
             let scaleX = dx > 0 ? 1 : -1;
-            
+
             duck.style.left = `${duckX}px`;
             duck.style.top = `${duckY}px`;
             duck.style.transform = `translate(-50%, -50%) scaleX(${scaleX})`;
-            
+
             requestAnimationFrame(bossChaseLoop);
         }
 
@@ -1459,7 +1459,7 @@
 
         document.getElementById('animal-form').addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
             const inputs = document.querySelectorAll('#animal-form input, #animal-form select');
             let combinedString = '';
             inputs.forEach(i => combinedString += i.value);
@@ -1469,7 +1469,7 @@
                 hash = combinedString.charCodeAt(i) + ((hash << 5) - hash);
             }
             hash = Math.abs(hash);
-            
+
             const animalIndex = hash % animalsDb.length;
             const animal = animalsDb[animalIndex];
 
@@ -1482,7 +1482,7 @@
 
             const statsGrid = document.querySelector('.stats-grid');
             statsGrid.innerHTML = '';
-            
+
             animal.stats.forEach((val, idx) => {
                 const colorHue = (idx * 40) % 360;
                 statsGrid.innerHTML += `
@@ -1513,7 +1513,7 @@
             document.getElementById('animal-input-section').style.display = 'block';
             document.getElementById('animal-form').reset();
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            
+
             // Refill user's name if they already submitted it via modal
             if(currentUserName) {
                 document.getElementById('a-name').value = currentUserName;
