@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#07080d">
     <title>Rajath's AI Project</title>
     <!-- Google Fonts: Modern Rounded and Premium Tech Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;800;900&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
@@ -25,6 +26,10 @@
             
             --font-main: 'Nunito', sans-serif;
             --font-display: 'Space Grotesk', sans-serif;
+        }
+
+        html {
+            background-color: var(--bg-dark);
         }
 
         * {
@@ -139,6 +144,7 @@
             color: #fff;
             outline: none;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            min-height: 44px; /* Ensure touch friendliness */
         }
 
         .btn::after {
@@ -166,6 +172,7 @@
             font-size: 0.9rem;
             padding: 0.75rem 1.6rem;
             border-radius: 16px;
+            min-height: 44px;
         }
         .btn-back:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); }
 
@@ -187,6 +194,7 @@
             gap: 0.5rem;
             color: #cbd5e1;
             box-shadow: 0 4px 15px rgba(139, 92, 246, 0.1);
+            min-height: 44px;
         }
         .admin-badge:hover {
             background: rgba(139, 92, 246, 0.35);
@@ -206,6 +214,7 @@
             font-size: 1.05rem;
             transition: all 0.3s ease;
             outline: none;
+            min-height: 44px;
         }
 
         input:focus, select:focus {
@@ -216,7 +225,7 @@
 
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
             gap: 2.5rem;
             margin-top: 3.5rem;
         }
@@ -249,10 +258,10 @@
         .animal-hover:hover { box-shadow: 0 15px 45px rgba(168, 85, 247, 0.25); border-color: rgba(168, 85, 247, 0.4); }
 
         #flames-page { text-align: center; }
-        .flames-form-container { max-width: 520px; margin: 0 auto; }
+        .flames-form-container { max-width: 520px; margin: 0 auto; width: 100%; }
         
         #flames-result { display: none; margin-top: 1.5rem; }
-        .result-title { font-size: 3.5rem; font-weight: 900; margin-bottom: 0.5rem; text-shadow: 0 0 20px currentColor; font-family: var(--font-display); }
+        .result-title { font-size: 3.5rem; font-weight: 900; margin-bottom: 0.5rem; text-shadow: 0 0 20px currentColor; font-family: var(--font-display); word-break: break-word; }
         .result-score { font-size: 2.2rem; font-weight: bold; margin-bottom: 2rem; }
         .result-desc { font-size: 1.25rem; line-height: 1.7; margin-bottom: 2.5rem; color: #f1f5f9; padding: 0 1rem; }
 
@@ -317,7 +326,7 @@
 
         .animal-form-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
             gap: 1.5rem;
         }
         
@@ -339,7 +348,7 @@
             100% { transform: scale(1); box-shadow: 0 0 30px rgba(168, 85, 247, 0.3); }
         }
 
-        .animal-name { font-size: 2.8rem; color: #c084fc; margin-bottom: 1rem; font-weight: 900; font-family: var(--font-display); }
+        .animal-name { font-size: 2.8rem; color: #c084fc; margin-bottom: 1rem; font-weight: 900; font-family: var(--font-display); word-break: break-word; }
         .animal-desc { font-size: 1.2rem; color: #cbd5e1; margin-bottom: 3rem; max-width: 700px; margin-inline: auto; line-height: 1.7; }
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.8rem; text-align: left; }
 
@@ -348,6 +357,7 @@
             gap: 1rem;
             margin-bottom: 2rem;
             justify-content: center;
+            flex-wrap: wrap; /* Fix tab overflowing on mobile */
         }
         .admin-tab-btn {
             background: rgba(255,255,255,0.05);
@@ -358,6 +368,9 @@
             cursor: pointer;
             font-weight: bold;
             transition: all 0.3s;
+            min-height: 44px;
+            flex-grow: 1; /* Allow tabs to stretch on small screens */
+            text-align: center;
         }
         .admin-tab-btn.active {
             background: var(--theme-animal);
@@ -396,6 +409,39 @@
             background: rgba(255, 255, 255, 0.02);
         }
 
+        /* Name Entry Modal Overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            padding: 1.5rem;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .name-modal {
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+        }
+
         /* Responsive Breakpoints */
         @media (max-width: 768px) {
             h1 { font-size: 2.3rem; }
@@ -403,6 +449,9 @@
             .cards-grid { grid-template-columns: 1fr; gap: 1.8rem; }
             .glass-panel { padding: 1.8rem 1.2rem; }
             .animal-avatar { width: 130px; height: 130px; font-size: 5rem; }
+            .result-title { font-size: 2.5rem; }
+            .result-score { font-size: 1.8rem; }
+            .animal-name { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -414,6 +463,19 @@
     <!-- Floating Secure Access Key Badge -->
     <div class="admin-badge" id="open-admin-btn">
         🔐 Analytics Logs
+    </div>
+
+    <!-- Name Entry Modal -->
+    <div class="modal-overlay" id="name-modal-overlay">
+        <div class="glass-panel name-modal">
+            <h2 style="color: #a855f7; margin-bottom: 1rem;">Enter Your Name</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Who is playing today? Please let us know before you begin.</p>
+            <form id="name-popup-form">
+                <input type="text" id="popup-player-name" placeholder="Your Name" required autocomplete="off" style="text-align: center; font-weight: bold;">
+                <button type="submit" class="btn btn-animal" style="width: 100%;">Continue to Game</button>
+                <button type="button" class="btn-back" id="close-name-popup" style="margin-top: 1rem; margin-bottom: 0; width: 100%;">Cancel</button>
+            </form>
+        </div>
     </div>
 
     <!-- =========================================================
@@ -683,6 +745,10 @@
         let db = null;
         let auth = null;
         let isFirebaseConnected = false;
+        
+        // Name Popup State Variables
+        let currentUserName = '';
+        let pendingGameId = '';
 
         // Offline storage lists for fallback simulations (prevents errors if firebase fails or is not injected)
         const offlineVisits = [];
@@ -702,7 +768,7 @@
         }
 
         /* ---------------------------------------------------------
-           1. UTILS & NAVIGATION
+           1. UTILS, NAVIGATION & NAME POPUP
            --------------------------------------------------------- */
         const pages = ['home', 'flames', 'duck', 'animal', 'admin'];
 
@@ -716,13 +782,76 @@
             // Reset states if leaving pages
             if(pageId !== 'duck') resetDuck();
         };
-
-        // Nav Listeners
-        document.getElementById('nav-flames').addEventListener('click', () => showPage('flames'));
-        document.getElementById('nav-duck').addEventListener('click', () => showPage('duck'));
-        document.getElementById('nav-animal').addEventListener('click', () => showPage('animal'));
-        document.getElementById('open-admin-btn').addEventListener('click', () => showPage('admin'));
         
+        // --- NAME POPUP LOGIC ---
+        function showNamePopup(gameId) {
+            if (currentUserName) {
+                enterGame(gameId); // Name already provided in this session
+                return;
+            }
+            pendingGameId = gameId;
+            document.getElementById('name-modal-overlay').classList.add('active');
+            document.getElementById('popup-player-name').focus();
+        }
+        
+        document.getElementById('name-popup-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nameInput = document.getElementById('popup-player-name').value.trim();
+            if (nameInput) {
+                currentUserName = nameInput;
+                document.getElementById('name-modal-overlay').classList.remove('active');
+                
+                // Pre-fill name fields if entering Flames or Animal game
+                if(pendingGameId === 'flames') {
+                    document.getElementById('flames-name1').value = currentUserName;
+                } else if(pendingGameId === 'animal') {
+                    document.getElementById('a-name').value = currentUserName;
+                }
+                
+                enterGame(pendingGameId);
+            }
+        });
+
+        document.getElementById('close-name-popup').addEventListener('click', () => {
+            document.getElementById('name-modal-overlay').classList.remove('active');
+            pendingGameId = '';
+        });
+        
+        // --- FIREBASE ENTRY LOGGING ---
+        async function saveGameEntry(gameName) {
+            if (gameName !== 'flames' && gameName !== 'animal') return;
+
+            const entryData = {
+                name: currentUserName,
+                game: gameName,
+                timestamp: new Date()
+            };
+
+            if (!isFirebaseConnected) {
+                console.log("Offline mode: Logged game entry ->", entryData);
+                return;
+            }
+
+            try {
+                // Ensure proper Firestore mapping as per mandatory project architecture constraints
+                const logsCol = collection(db, 'artifacts', appId, 'public', 'data', 'game_entries');
+                await addDoc(logsCol, entryData);
+            } catch (err) {
+                console.error("Failed to log game entry:", err);
+            }
+        }
+        
+        async function enterGame(gameId) {
+            await saveGameEntry(gameId); // Await the logging event before navigation
+            showPage(gameId);
+        }
+
+        // Nav Listeners mapping to name popup flow
+        document.getElementById('nav-flames').addEventListener('click', () => showNamePopup('flames'));
+        document.getElementById('nav-duck').addEventListener('click', () => showNamePopup('duck'));
+        document.getElementById('nav-animal').addEventListener('click', () => showNamePopup('animal'));
+        
+        document.getElementById('open-admin-btn').addEventListener('click', () => showPage('admin'));
         document.getElementById('back-flames').addEventListener('click', () => showPage('home'));
         document.getElementById('back-duck').addEventListener('click', () => showPage('home'));
         document.getElementById('back-animal').addEventListener('click', () => showPage('home'));
@@ -993,7 +1122,7 @@
                 const finalScore = Math.floor(Math.random() * 6) + 95;
                 showFlamesResult({
                     title: 'LOVE', color: '#ef4444', icon: '❤️🔥', 
-                    desc: "He will lick every inch of your body or suck your boobs hard. You two are made for each other. Pure passion!", 
+                    desc: "you have great sexual passion and compatibility. You two are made for each other. Pure passion!", 
                     theme: ['#fda4af', '#ef4444']
                 }, finalScore, [100, 98, 96, 99, 100]); // 95-100 score
                 throwConfetti();
@@ -1093,6 +1222,10 @@
             flamesResultSec.style.display = 'none';
             flamesInputSec.style.display = 'block';
             document.getElementById('flames-form').reset();
+            // Refill user's name if they already submitted it via modal
+            if (currentUserName) {
+                document.getElementById('flames-name1').value = currentUserName;
+            }
         });
 
 
@@ -1380,6 +1513,11 @@
             document.getElementById('animal-input-section').style.display = 'block';
             document.getElementById('animal-form').reset();
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Refill user's name if they already submitted it via modal
+            if(currentUserName) {
+                document.getElementById('a-name').value = currentUserName;
+            }
         });
 
         document.getElementById('animal-share').addEventListener('click', () => {
